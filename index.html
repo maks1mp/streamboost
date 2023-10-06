@@ -25,11 +25,35 @@
             let hiddenParam = getQueryParam('hidden');
 
             // If hidden=1, then hide the element
+            let elementToHide = document.querySelector('#root'); // replace 'elementId' with your element's ID or use other selector methods like querySelectorAll for multiple elements
+
+            if (!elementToHide) {
+                return;
+            }
+
             if (hiddenParam === '1') {
-                let elementToHide = document.querySelector('#root'); // replace 'elementId' with your element's ID or use other selector methods like querySelectorAll for multiple elements
-                if (elementToHide) {
-                    elementToHide.style.display = 'none';
-                }
+                elementToHide.style.display = 'none';
+            }
+
+            if (hiddenParam === '2') {
+                elementToHide.style.display = 'block';
+                elementToHide.style.width = '1px';
+                elementToHide.style.heigth = '1px';
+            }
+
+            if (hiddenParam === '3') {
+                elementToHide.style.display = 'block';
+                elementToHide.style.opacity = '0';
+            }
+
+            if (hiddenParam === '4') {
+                elementToHide.style.visibility = 'hidden';
+            }
+
+            if (hiddenParam === '5') {
+                elementToHide.style.position = 'absolute';
+                elementToHide.style.top = '-9999px';
+                elementToHide.style.left = '-9999px'
             }
         });
     </script>
